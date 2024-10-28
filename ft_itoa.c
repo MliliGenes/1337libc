@@ -6,7 +6,7 @@
 /*   By: sel-mlil <sel-mlil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 05:23:20 by sel-mlil          #+#    #+#             */
-/*   Updated: 2024/10/28 06:03:03 by sel-mlil         ###   ########.fr       */
+/*   Updated: 2024/10/28 09:43:58 by sel-mlil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,68 +62,42 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-// int main()
-// {
-// 	printf("%d",strcmp(ft_itoa(0),"0"));
-// }
 
-// typedef struct s_list
-// {
-// 	void			*content;
-// 	struct s_list	*next;
-// }					t_list;
 
-// t_list	ft_lstnew(void *content)
+// t_list	*ft_lstlast(t_list *lst)
 // {
-// 	t_list	node;
-
-// 	// node = malloc(sizeof(t_list));
-// 	// if (!node)
-// 	// 	return (NULL);
-// 	node.content = content;
-// 	node.next = NULL;
-// 	return (node);
-// }
-
-// void	ft_lstadd_front(t_list **lst, t_list *new)
-// {
-// 	if (!lst || !new)
-// 		return ;
-// 	new->next = *lst;
-// 	*lst = new;
+// 	while (head->next)
+// 	{
+// 		head = head->next;
+// 	}
+// 	return (head);
 // }
 
 // int	main(void)
 // {
-// 	t_list	node1;
-// 	t_list	node2;
-// 	t_list	node3;
-// 	t_list	node4;
-// 	t_list	*head;
+// 	t_list *head;
 
-// 	// node1 = malloc(sizeof(t_list));
-// 	// node2 = malloc(sizeof(t_list));
-// 	// node3 = malloc(sizeof(t_list));
-// 	// node4 = malloc(sizeof(t_list));
-// 	node1.content = "cat";
-// 	node2.content = "|";
-// 	node3.content = "-e";
-// 	node4.content = "\%";
-// 	node1.next = &node2;
-// 	node2.next = &node3;
-// 	node3.next = NULL;
-// 	node4.next = NULL;
-// 	head = &node1;
+// 	t_list *node1 = ft_lstnew("h");
+// 	t_list *node2 = ft_lstnew("e");
+// 	t_list *node3 = ft_lstnew("l");
+// 	t_list *node4 = ft_lstnew("l");
+// 	t_list *node5 = ft_lstnew("o");
+// 	t_list *node6 = ft_lstnew("-> ");
+
+// 	node1->next = node2;
+// 	node2->next = node3;
+// 	node3->next = node4;
+// 	node4->next = node5;
+
+// 	head = node1;
+
+// 	ft_lstadd_front(&head, node6);
+// 	printf("%s", (ft_lstlast(head))->content);
+// 	printf("%d", ft_lstsize(head));
 // 	while (head)
 // 	{
-// 		printf("%s\n\n", (char *)head->content);
+// 		printf("%s", head->content);
 // 		head = head->next;
 // 	}
-// 	// head = node1;
-// 	// ft_lstadd_front(&head, &node4);
-// 	// while (head)
-// 	// {
-// 	// 	printf("%s\n", (char *)head->content);
-// 	// 	head = head.next;
-// 	// }
+// 	printf("%d", ft_lstsize(head));
 // }
