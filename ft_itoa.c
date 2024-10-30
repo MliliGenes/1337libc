@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-mlil <sel-mlil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 05:23:20 by sel-mlil          #+#    #+#             */
-/*   Updated: 2024/10/29 09:51:28 by sel-mlil         ###   ########.fr       */
+/*   Created: 2024/10/30 04:40:49 by sel-mlil          #+#    #+#             */
+/*   Updated: 2024/10/30 04:40:50 by sel-mlil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-static int	nb_nbr(int n)
+static int	nb_nbr(long int n)
 {
 	int				cp;
 	unsigned int	pn;
@@ -33,31 +33,37 @@ static int	nb_nbr(int n)
 	return (cp);
 }
 
+static char	*filling(char *str, long int nb, int len)
+{
+	str[len] = '\0';
+	if (nb == 0)
+	{
+		str[0] = '0';
+		return (str);
+	}
+	if (nb < 0)
+	{
+		str[0] = '-';
+		nb = -nb;
+	}
+	while (nb > 0)
+	{
+		str[--len] = (nb % 10) + '0';
+		nb /= 10;
+	}
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
-	size_t			len;
-	unsigned int	pn;
-	char			*str;
-	int				i;
+	long int	nb;
+	int			len;
+	char		*str;
 
-	len = nb_nbr(n);
+	nb = (long)n;
+	len = nb_nbr(nb);
 	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
-	if (n < 0)
-		pn = (unsigned int)(n * -1);
-	else
-		pn = (unsigned int)(n);
-	i = len;
-	str[i--] = '\0';
-	if (n < 0)
-		str[0] = '-';
-	while (i > 0)
-	{
-		str[i--] = (pn % 10) + '0';
-		pn /= 10;
-	}
-	if (str[i] != '-')
-		str[i] = (pn % 10) + '0';
-	return (str);
+	return (filling(str, nb, len));
 }
