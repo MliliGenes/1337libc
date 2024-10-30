@@ -6,7 +6,7 @@
 /*   By: sel-mlil <sel-mlil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 02:21:22 by sel-mlil          #+#    #+#             */
-/*   Updated: 2024/10/30 02:47:18 by sel-mlil         ###   ########.fr       */
+/*   Updated: 2024/10/30 02:52:43 by sel-mlil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*head;
 	t_list	*new;
 
+	if (!f || !lst)
+		return (NULL);
 	head = NULL;
 	while (lst)
 	{
