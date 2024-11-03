@@ -6,7 +6,7 @@
 /*   By: sel-mlil <sel-mlil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 06:31:09 by sel-mlil          #+#    #+#             */
-/*   Updated: 2024/10/28 06:36:40 by sel-mlil         ###   ########.fr       */
+/*   Updated: 2024/11/01 13:33:55 by sel-mlil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (!fd)
+	if (!s || fd < 0) 
 		return ;
 	while (*s)
 	{

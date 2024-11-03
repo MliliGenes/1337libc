@@ -6,7 +6,7 @@
 /*   By: sel-mlil <sel-mlil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 06:28:14 by sel-mlil          #+#    #+#             */
-/*   Updated: 2024/10/28 06:30:26 by sel-mlil         ###   ########.fr       */
+/*   Updated: 2024/11/01 13:39:55 by sel-mlil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (!fd)
+	if (fd < 0)
 		return ;
 	write(fd, &c, sizeof(char));
 }

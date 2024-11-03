@@ -8,34 +8,39 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c\
 
 BSRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c  \
-	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+	ft_lstlast_bonus.c  ft_lstdelone_bonus.c \
+	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_lstadd_back_bonus.c \
 
 
 OBJS = ${SRCS:.c=.o}
+
 BOBJS = ${BSRCS:.c=.o}
+
 NAME = libft.a
+
 COMPILER = cc
+
 RM = rm -f
+
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 ${NAME}: ${OBJS}
-	ar rcs ${NAME} ${OBJS}
+	ar rc ${NAME} ${OBJS}
 
 bonus: ${BOBJS}
-	ar rcs ${NAME} ${BOBJS}
+	ar rc ${NAME} ${BOBJS}
 
-%.o: %.c
+%.o: %.c libft.h
 	$(COMPILER) $(CFLAGS) -c $< -o $@
 
-clean: 
-	rm -f $(OBJS) ${BOBJS}
+clean:
+	$(RM) $(OBJS) $(BOBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

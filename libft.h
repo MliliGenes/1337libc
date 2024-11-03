@@ -6,15 +6,15 @@
 /*   By: sel-mlil <sel-mlil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 02:22:39 by sel-mlil          #+#    #+#             */
-/*   Updated: 2024/10/30 02:21:53 by sel-mlil         ###   ########.fr       */
+/*   Updated: 2024/11/02 21:03:08 by sel-mlil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_list

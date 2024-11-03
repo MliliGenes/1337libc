@@ -6,7 +6,7 @@
 /*   By: sel-mlil <sel-mlil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 02:14:44 by sel-mlil          #+#    #+#             */
-/*   Updated: 2024/10/25 09:11:54 by sel-mlil         ###   ########.fr       */
+/*   Updated: 2024/11/01 21:30:22 by sel-mlil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t		i;
+	size_t	i;
 
-	if (dest == NULL && src == NULL)
+	if (!dest && !src)
 		return (NULL);
 	i = 0;
 	if ((char *)dest < (const char *)src)

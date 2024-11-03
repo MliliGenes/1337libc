@@ -6,7 +6,7 @@
 /*   By: sel-mlil <sel-mlil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 02:31:46 by sel-mlil          #+#    #+#             */
-/*   Updated: 2024/10/23 02:32:07 by sel-mlil         ###   ########.fr       */
+/*   Updated: 2024/10/30 22:03:11 by sel-mlil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlen(const char *s)
 
 	len = 0;
 	while (s[len])
-	{
 		len++;
-	}
 	return (len);
 }

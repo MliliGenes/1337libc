@@ -6,7 +6,7 @@
 /*   By: sel-mlil <sel-mlil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 06:37:47 by sel-mlil          #+#    #+#             */
-/*   Updated: 2024/10/28 07:50:21 by sel-mlil         ###   ########.fr       */
+/*   Updated: 2024/11/01 13:39:06 by sel-mlil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	np;
 
+	if (fd < 0)
+		return ;
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-mlil <sel-mlil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 01:59:24 by sel-mlil          #+#    #+#             */
-/*   Updated: 2024/10/25 12:45:27 by sel-mlil         ###   ########.fr       */
+/*   Created: 2024/11/01 13:47:21 by sel-mlil          #+#    #+#             */
+/*   Updated: 2024/11/01 20:07:02 by sel-mlil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*pointer;
 
-	if (nmemb < 0 || size < 0)
+	if (size == 0 || nmemb == 0)
+	{
+		pointer = malloc(0);
+		return (pointer);
+	}
+	if (nmemb > SIZE_MAX / size)
 		return (NULL);
 	pointer = malloc(nmemb * size);
 	if (!pointer)
